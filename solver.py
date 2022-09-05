@@ -1,5 +1,5 @@
 # Import files
-from extractor import Extractor
+from extractor import extract_from_excel
 
 class Solver:
     def __init__(self, puzzle, wordlist):
@@ -102,8 +102,7 @@ class Solver:
                 
 
 if __name__ == "__main__":
-    extractor = Extractor()
-    puzzle, wordlist = extractor.extract_from_excel("puzzles/word_search_puzzles.xlsx")
+    puzzle, wordlist = extract_from_excel("puzzles/word_search_puzzles.xlsx", "Woordzoeker 1")
 
     solver = Solver(puzzle, wordlist)
     solved = solver.solve()
